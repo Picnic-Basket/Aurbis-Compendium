@@ -4,6 +4,14 @@ export class Page{
     private _gallaryUrls:String[];
     private _textContent:String;
 
+	public get textContent(): String {
+		return this._textContent;
+	}
+
+	public set textContent(value: String) {
+		this._textContent = value;
+	}
+
     constructor();
     constructor(obj?:any){
         this._id = obj && obj._id;
