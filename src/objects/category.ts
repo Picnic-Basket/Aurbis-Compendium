@@ -1,7 +1,7 @@
 export class Category {
     private _id:number;
     private _name: String;
-    private _subCategories: Category[];
+    private _subCategories: number[];
 
     constructor();
     constructor(obj?:any) {
@@ -9,7 +9,12 @@ export class Category {
         this._name = obj && obj._name;
         this._subCategories = obj && obj._subCategories || [];
     }
+    
+    public addSubCategory(num: number) {
+        this._subCategories.push(num);
+    }
 
+// Getters and Setters
 	public get id(): number {
 		return this._id;
 	}
@@ -26,11 +31,11 @@ export class Category {
 		this._name = value;
 	}
 
-	public get subCategories(): Category[] {
+	public get subCategories(): number[] {
 		return this._subCategories;
 	}
 
-	public set subCategories(value: Category[]) {
+	public set subCategories(value: number[]) {
 		this._subCategories = value;
 	}
 }
